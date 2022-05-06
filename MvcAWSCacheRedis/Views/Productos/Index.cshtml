@@ -6,6 +6,8 @@
 
 <h1>Index</h1>
 
+<h2>@TempData["MENSAJE"]</h2>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -49,7 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Imagen)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id=item.IdProducto })
+                @Html.ActionLink("Details", "Details", new { id=item.IdProducto }) |
+                
+                <a asp-controller="Productos" asp-action="SeleccionarFavorito" asp-route-id="@item.IdProducto" class="btn btn-outline-success">Seleccionar fav</a>
             </td>
         </tr>
 }
